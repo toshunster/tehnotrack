@@ -1,0 +1,4 @@
+[
+    { "id": 1, "method": "api.hello", "params": ["Jerry"] },    
+    { "id": 2, "method": "api.cat_list", "params": [] }
+]

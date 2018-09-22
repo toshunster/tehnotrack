@@ -1,0 +1,3 @@
+[
+    { "jsonrpc": "2.0", "id": 3, "method": "api.add_cat", "params": { "name" : "Felix Jr.", "age": 80 } }
+]
