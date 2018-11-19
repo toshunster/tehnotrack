@@ -1,0 +1,8 @@
+
+S3_ENDPOINT_URL = 'http://hb.bizmrg.com'
+S3_ACCESS_KEY_ID = ''
+S3_SECRET_ACCESS_KEY = ''
+S3_BUCKET_NAME = ''
+
+VK_APP_ID = ''
+VK_APP_SECRET = ''

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Error><Code>AccessDenied</Code><AWSAccessKeyId>wkvyNEf6PKUdpAAh4BaX1w</AWSAccessKeyId><RequestId>MpqjWi7A</RequestId><Message>AWS authentication requires a valid Date or x-amz-date header</Message></Error>
