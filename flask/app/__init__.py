@@ -8,7 +8,7 @@ import settings
 #from authlib.flask.client import OAuth
 from flask_oauth import OAuth
 
-from flask_cache import Cache
+from flask_caching import Cache
 
 #from werkzeug.contrib.profiler import ProfilerMiddleware
 

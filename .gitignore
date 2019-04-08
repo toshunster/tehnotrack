@@ -1,2 +1,5 @@
 *.pyc
-migrations
+__pycache__
+backups
+instance
+settings.py

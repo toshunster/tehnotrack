@@ -1,13 +1,14 @@
 boto3==1.9.16
-Flask_Cache==0.13.1
 Flask_Script==2.0.6
 Flask_SQLAlchemy==2.3.2
 SQLAlchemy==1.2.18
-psycopg2==2.7.5
+#psycopg2==2.7.5
 alembic==1.0.7
 django_json_rpc==0.7.2
 Flask_Migrate==2.4.0
-Flask_OAuth==0.12
+#Flask_OAuth==0.12
+Flask_Caching==1.4.0
+git+https://github.com/mitsuhiko/flask-oauth
 Flask_JSONRPC==0.3.1
 Werkzeug==0.14.1
 jsonrpc==1.2
