@@ -14,6 +14,8 @@ from flask import make_response
 from .models import Person
 import random
 
+import socket
+
 @cache.memoize()
 def get_random( num ):
     print( "get_random" )
@@ -24,6 +26,24 @@ def get_random( num ):
 @app.route('/test/')
 def index_test(name="world"):
     return "Hello, {}! Random: {} / {}".format( name, get_random( 10 ), get_random(1000) )
+
+@app.route('/url_viewer/')
+def url_viewer():
+    urls = ['https://mail.ru', 'https://ya.ru' ]#, 'https://google.com']
+    url = random.choice(urls)
+    sock = socket.socket()
+    #sock.timeout(5)
+    sock.connect(('127.0.0.1', 9090))
+    print("Sending url: {}".format(url))
+    sock.send(url.encode('utf8'))
+    result = b''
+    while True:
+        data = sock.recv(1024)
+        if not data:
+            break
+        result += data
+    sock.close()
+    return jsonify(result.decode('utf8'))
 
 @app.route('/create/<string:name>/')
 def create_user(name):
