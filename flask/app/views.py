@@ -29,13 +29,14 @@ def index_test(name="world"):
 
 @app.route('/url_viewer/')
 def url_viewer():
-    urls = ['https://mail.ru', 'https://ya.ru' ]#, 'https://google.com']
+    END_MARKER = b'\r\n'
+    urls = [ b'https://mail.ru', b'https://ya.ru']
     url = random.choice(urls)
-    sock = socket.socket()
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     #sock.timeout(5)
-    sock.connect(('127.0.0.1', 9090))
+    sock.connect(('localhost', 9090))
     print("Sending url: {}".format(url))
-    sock.send(url.encode('utf8'))
+    sock.send(url + END_MARKER)
     result = b''
     while True:
         data = sock.recv(1024)
@@ -43,7 +44,8 @@ def url_viewer():
             break
         result += data
     sock.close()
-    return jsonify(result.decode('utf8'))
+
+    return jsonify(json.loads(result.decode('utf8')))
 
 @app.route('/create/<string:name>/')
 def create_user(name):
